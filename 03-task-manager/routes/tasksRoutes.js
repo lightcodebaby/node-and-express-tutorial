@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const express = require("express");
+const express = require('express');
 
 const router = express.Router();
 
@@ -10,9 +10,9 @@ const {
     getTask,
     updateTask,
     deleteTask,
-} = require("../controllers/tasksController");
+} = require('../controllers/tasksController');
 
-router.route("/").get(getAllTasks).post(createTask);
-router.route("/:id").get(getTask).patch(updateTask).delete(deleteTask);
+router.route('/').get(getAllTasks).post(createTask);
+router.route('/:id').get(getTask).patch(updateTask).delete(deleteTask);
 
 module.exports = router;

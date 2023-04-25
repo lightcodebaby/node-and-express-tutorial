@@ -1,17 +1,17 @@
-"use strict";
+'use strict';
 
-const express = require("express");
-const { products } = require(".4./data");
+const express = require('express');
+const { products } = require('.4./data');
 
 const app = express();
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
     res.status(200).send(
         '<h1>Home Page</h1><a href="/api/products">products</a>'
     );
 });
 
-app.get("/api/products", (req, res) => {
+app.get('/api/products', (req, res) => {
     const newProducts = products.map((product) => {
         const { id, name, image } = product;
         return { id, name, image };
@@ -19,22 +19,22 @@ app.get("/api/products", (req, res) => {
     res.json(newProducts);
 });
 
-app.get("/api/products/:id", (req, res) => {
+app.get('/api/products/:id', (req, res) => {
     console.log(req.params);
     const { id } = req.params;
     const singleProduct = products.find((product) => product.id == Number(id));
     if (!singleProduct) {
-        res.status(404).send("Product does not exist");
+        res.status(404).send('Product does not exist');
     }
     res.json(singleProduct);
 });
 
-app.get("/api/products/:prductID/reviews/:reviewID", (req, res) => {
+app.get('/api/products/:prductID/reviews/:reviewID', (req, res) => {
     console.log(req.params);
-    res.status(200).send("hello world");
+    res.status(200).send('hello world');
 });
 
-app.get("/api/v1/query", (req, res) => {
+app.get('/api/v1/query', (req, res) => {
     console.log(req.query);
     const { search, limit } = req.query;
     let sortedProducts = [...products];
@@ -53,5 +53,5 @@ app.get("/api/v1/query", (req, res) => {
 });
 
 app.listen(5000, () => {
-    console.log("server listening on port 5000");
+    console.log('server listening on port 5000');
 });

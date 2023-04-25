@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
-const express = require("express");
-let { people } = require("../data");
+const express = require('express');
+let { people } = require('../data');
 
 const app = express();
 
-app.use(express.static("./methods-public"));
+app.use(express.static('./methods-public'));
 
 // parse form data
 app.use(express.urlencoded({ extended: false }));
@@ -13,30 +13,30 @@ app.use(express.urlencoded({ extended: false }));
 // parse json data
 app.use(express(express.json()));
 
-app.post("/login", (req, res) => {
+app.post('/login', (req, res) => {
     const { name } = req.body;
     if (name) {
         return res.status(200).send(`Welcome ${name}`);
     }
-    res.status(401).send("Please provide credentials");
+    res.status(401).send('Please provide credentials');
 });
 
-app.get("/api/people", (req, res) => {
+app.get('/api/people', (req, res) => {
     res.status(200).json({ success: true, data: people });
 });
 
-app.post("/api/people", (req, res) => {
+app.post('/api/people', (req, res) => {
     const { name } = req.body;
     if (!name) {
         res.status(401).json({
             success: false,
-            msg: "please provide a name value",
+            msg: 'please provide a name value',
         });
     }
     res.status(201).json({ success: true, data: [...people, name] });
 });
 
-app.put("/api/people/:id", (req, res) => {
+app.put('/api/people/:id', (req, res) => {
     const { id } = req.body;
     const { name } = req.body;
     const person = people.find((person) => person.id === Number(id));
@@ -55,7 +55,7 @@ app.put("/api/people/:id", (req, res) => {
     return res.status(200).json({ success: true, data: newPeople });
 });
 
-app.delete("/api/people/:id", (req, res) => {
+app.delete('/api/people/:id', (req, res) => {
     const person = people.find((person) => person.id === Number(req.params.id));
     if (!person) {
         res.status(404).json({
@@ -70,5 +70,5 @@ app.delete("/api/people/:id", (req, res) => {
 });
 
 app.listen(5000, () => {
-    console.log("server is listening on port 5000");
+    console.log('server is listening on port 5000');
 });

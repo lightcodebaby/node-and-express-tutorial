@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
-const http = require("http");
+const http = require('http');
 
 const server = http.createServer((req, res) => {
-    console.log("request event");
-    res.end("Response");
+    console.log('request event');
+    res.end('Response');
 });
 
 server.listen(5000, () => {
-    console.log("Server listening on port: 5000");
+    console.log('Server listening on port: 5000');
 });

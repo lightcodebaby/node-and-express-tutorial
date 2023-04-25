@@ -1,12 +1,12 @@
-"use strict";
+'use strict';
 
 const authorize = (req, res, next) => {
     const { user } = req.query;
-    if (user === "ruben") {
-        req.user = { name: "ruben", age: 28 };
+    if (user === 'ruben') {
+        req.user = { name: 'ruben', age: 28 };
         next();
     } else {
-        res.status(401).send("Unauthorized");
+        res.status(401).send('Unauthorized');
     }
 };
 

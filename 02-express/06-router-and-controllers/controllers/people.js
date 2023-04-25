@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-let { people } = require("../../data");
+let { people } = require('../../data');
 
 const getPeople = (req, res) => {
     return res.status(200).json({ success: true, data: people });
@@ -11,7 +11,7 @@ const createPerson = (req, res) => {
     if (!name) {
         res.status(401).json({
             success: false,
-            msg: "please provide a name value",
+            msg: 'please provide a name value',
         });
     }
     return res.status(201).json({ success: true, data: [...people, name] });

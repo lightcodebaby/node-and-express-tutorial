@@ -1,13 +1,13 @@
-"use strict";
+'use strict';
 
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 const {
     getPeople,
     createPerson,
     updatePerson,
     deletePerson,
-} = require("../controllers/people");
+} = require('../controllers/people');
 
 // router.get("/", getPeople);
 
@@ -18,7 +18,7 @@ const {
 // router.delete("/:id", deletePerson);
 
 router
-    .route("/")
+    .route('/')
     .get(getPeople)
     .post(createPerson)
     .put(updatePerson)

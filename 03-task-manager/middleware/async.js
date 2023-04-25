@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const asyncWrapper = (fn) => {
     return async (req, res, next) => {

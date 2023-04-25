@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const logger = (req, res, next) => {
     const method = req.method;

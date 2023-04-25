@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 
-console.log("First log");
+console.log('First log');
 
 setTimeout(() => {
-    console.log("Third log");
+    console.log('Third log');
 }, 0);
 
-console.log("Second log");
+console.log('Second log');

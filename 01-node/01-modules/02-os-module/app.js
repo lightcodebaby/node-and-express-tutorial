@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const os = require("os");
+const os = require('os');
 
 // info about current user
 

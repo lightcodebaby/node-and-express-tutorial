@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const { readFile, writeFile } = require("fs").promises;
+const { readFile, writeFile } = require('fs').promises;
 // const util = require("util");
 
 // const readFilePromise = util.promisify(readFile);
@@ -8,9 +8,9 @@ const { readFile, writeFile } = require("fs").promises;
 
 const start = async () => {
     try {
-        const test01 = await readFile("./files/test01.txt", "utf-8");
-        const test02 = await readFile("./files/test02.txt", "utf-8");
-        await writeFile("./files/test03.txt", `${test01} ${test02}`, {
+        const test01 = await readFile('./files/test01.txt', 'utf-8');
+        const test02 = await readFile('./files/test02.txt', 'utf-8');
+        await writeFile('./files/test03.txt', `${test01} ${test02}`, {
             flag: a,
         });
         console.log(test01, test02);

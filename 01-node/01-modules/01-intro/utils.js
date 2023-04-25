@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const sayHi = (name) => {
     console.log(`Hello, ${name}!`);

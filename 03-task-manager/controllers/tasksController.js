@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
-const Task = require("../models/Task");
-const asyncWrapper = require("../middleware/async");
-const { createCustomError } = require("../errors/custom-error");
+const Task = require('../models/Task');
+const asyncWrapper = require('../middleware/async');
+const { createCustomError } = require('../errors/custom-error');
 
 const getAllTasks = asyncWrapper(async (req, res) => {
     const tasks = await Task.find({});

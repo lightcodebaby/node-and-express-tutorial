@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const { CustomAPIError } = require("../errors/custom-error");
+const { CustomAPIError } = require('../errors/custom-error');
 
 const errorHandlerMiddleware = (err, req, res, next) => {
     if (err instanceof CustomAPIError) {
@@ -8,7 +8,7 @@ const errorHandlerMiddleware = (err, req, res, next) => {
     }
     return res
         .status(500)
-        .json({ msg: "Something went wrong, please try again" });
+        .json({ msg: 'Something went wrong, please try again' });
 };
 
 module.exports = errorHandlerMiddleware;
