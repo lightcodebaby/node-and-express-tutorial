@@ -1,7 +1,7 @@
 'use strict';
 
 const express = require('express');
-const { products } = require('.4./data');
+const { products } = require('../data');
 
 const app = express();
 
@@ -52,6 +52,6 @@ app.get('/api/v1/query', (req, res) => {
     res.status(200).json(sortedProducts);
 });
 
-app.listen(5000, () => {
-    console.log('server listening on port 5000');
+app.listen(3000, () => {
+    console.log('server listening on port 3000');
 });
