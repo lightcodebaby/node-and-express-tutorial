@@ -10,14 +10,14 @@ import SmallSidebar from './SmallSidebar';
 import StatsContainer from './StatsContainer';
 
 export {
-  Logo,
-  FormRow,
-  Navbar,
-  SmallSidebar,
-  BigSidebar,
-  FormRowSelect,
-  JobsContainer,
-  SearchContainer,
-  StatsContainer,
-  ChartsContainer,
+    BigSidebar,
+    ChartsContainer,
+    FormRow,
+    FormRowSelect,
+    JobsContainer,
+    Logo,
+    Navbar,
+    SearchContainer,
+    SmallSidebar,
+    StatsContainer,
 };
